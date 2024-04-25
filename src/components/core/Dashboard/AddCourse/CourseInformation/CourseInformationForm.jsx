@@ -30,18 +30,19 @@ export default function CourseInformationForm() {
   const { token } = useSelector((state) => state.auth)
   const { course, editCourse } = useSelector((state) => state.course)
   const [loading, setLoading] = useState(false)
-  const [courseCategories, setCourseCategories] = useState([])
+  const [courseCategories, setCourseCategories] = useState([]);
 
   useEffect(() => {
     const getCategories = async () => {
       setLoading(true)
-      const categories = await fetchCourseCategories()
+      const categories = await fetchCourseCategories();
       if (categories.length > 0) {
         // console.log("categories", categories)
-        setCourseCategories(categories)
+        setCourseCategories(categories);
       }
-      setLoading(false)
+      setLoading(false);
     }
+
     // if form is in edit mode
     if (editCourse) {
       // console.log("data populated", editCourse)
