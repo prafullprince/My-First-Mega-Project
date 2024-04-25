@@ -40,3 +40,4 @@ export const {
 } = courseSlice.actions
 
 export default courseSlice.reducer
+
